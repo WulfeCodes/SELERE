@@ -1,0 +1,40 @@
+23:52:56 - Setting bitrate for can0...
+23:52:56 - Bringing can0 interface up...
+23:52:56 - can0 interface is up.
+23:52:56 - Timestamp: 1732146776.074159    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:52:57 - Timestamp: 1732146776.076006    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:52:58 - Timestamp: 1732146776.077986    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:52:59 - Timestamp: 1732146776.079984    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:53:00 - Timestamp: 1732146776.081992    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:53:01 - Timestamp: 1732146776.083993    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:53:02 - Timestamp: 1732146776.085972    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:53:03 - Timestamp: 1732146776.087958    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:53:04 - Timestamp: 1732146776.089956    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:53:05 - Timestamp: 1732146776.091956    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:53:06 - Timestamp: 1732146776.093955    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:54:02 - Setting bitrate for can0...
+23:54:02 - Bringing can0 interface up...
+23:54:02 - can0 interface is up.
+23:54:02 - Timestamp: 1732146842.957484    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:54:03 - Timestamp: 1732146842.958595    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:54:04 - Timestamp: 1732146842.960580    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:54:05 - Timestamp: 1732146842.962597    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:54:18 - Setting bitrate for can0...
+23:54:18 - Bringing can0 interface up...
+23:54:18 - can0 interface is up.
+23:57:12 - Setting bitrate for can0...
+23:57:12 - Bringing can0 interface up...
+23:57:12 - can0 interface is up.
+23:57:12 - Timestamp: 1732147032.490850    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:57:13 - Timestamp: 1732147033.494512    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:57:14 - Timestamp: 1732147034.496777    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:57:15 - Timestamp: 1732147035.498988    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:57:16 - Timestamp: 1732147032.491938    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:57:17 - Timestamp: 1732147032.493924    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:58:48 - Setting bitrate for can0...
+23:58:48 - Bringing can0 interface up...
+23:58:48 - can0 interface is up.
+23:58:48 - Timestamp: 1732147128.929160    ID: 00002968    X                DLC:  8    ff a2 00 01 00 00 1d 00     Channel: can0
+23:58:49 - Timestamp: 1732147129.932264    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0
+23:58:50 - Timestamp: 1732147130.935481    ID: 00002968    X                DLC:  8    ff a2 00 01 00 00 1d 00     Channel: can0
+23:58:51 - Timestamp: 1732147128.929961    ID: 00002968    X                DLC:  8    ff a2 00 00 00 00 1d 00     Channel: can0

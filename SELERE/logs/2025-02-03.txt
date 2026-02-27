@@ -1,0 +1,252 @@
+22:00:33 - Setting bitrate for can0...
+22:00:33 - Bringing can0 interface up...
+22:00:33 - can0 interface is up.
+22:00:39 - Setting bitrate for can0...
+22:00:39 - Bringing can0 interface up...
+22:00:39 - can0 interface is up.
+23:22:25 - Setting bitrate for can0...
+23:22:25 - Bringing can0 interface up...
+23:22:25 - can0 interface is up.
+23:47:53 - Setting bitrate for can0...
+23:47:53 - Bringing can0 interface up...
+23:47:53 - can0 interface is up.
+23:48:31 - Setting bitrate for can0...
+23:48:33 - Bringing can0 interface up...
+23:48:34 - can0 interface is up.
+23:50:40 - Setting bitrate for can0...
+23:50:42 - Bringing can0 interface up...
+23:50:45 - can0 interface is up.
+23:52:12 - Setting bitrate for can0...
+23:52:14 - Bringing can0 interface up...
+23:52:16 - can0 interface is up.
+23:54:30 - Setting bitrate for can0...
+23:54:30 - Bringing can0 interface up...
+23:54:30 - can0 interface is up.
+23:55:27 - Timestamp: 1738626871.519092    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:28 - Timestamp: 1738626872.519089    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:29 - Timestamp: 1738626873.519106    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:30 - Timestamp: 1738626874.519025    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:31 - Timestamp: 1738626875.519017    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:32 - Timestamp: 1738626876.518957    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:33 - Timestamp: 1738626877.518969    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:34 - Timestamp: 1738626878.518912    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:35 - Timestamp: 1738626879.519068    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:36 - Timestamp: 1738626880.518922    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:37 - Timestamp: 1738626881.518846    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:38 - Timestamp: 1738626882.518900    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:39 - Timestamp: 1738626883.518851    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:40 - Timestamp: 1738626884.518782    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:41 - Timestamp: 1738626885.518762    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:55:42 - Timestamp: 1738626886.518759    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:43 - Timestamp: 1738626887.518805    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:48 - Timestamp: 1738626888.518744    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:49 - Timestamp: 1738626889.518680    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:50 - Timestamp: 1738626890.518694    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:51 - Timestamp: 1738626891.518718    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:52 - Timestamp: 1738626892.518734    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:53 - Timestamp: 1738626893.518602    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:54 - Timestamp: 1738626894.518624    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:55 - Timestamp: 1738626895.518588    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:55:56 - Timestamp: 1738626896.518662    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:57 - Timestamp: 1738626897.518525    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:58 - Timestamp: 1738626898.518507    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:55:59 - Timestamp: 1738626899.518486    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:00 - Timestamp: 1738626900.518473    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:56:01 - Timestamp: 1738626901.518496    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:02 - Timestamp: 1738626902.518433    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:03 - Timestamp: 1738626903.518427    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:04 - Timestamp: 1738626904.518470    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:56:05 - Timestamp: 1738626905.518384    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:06 - Timestamp: 1738626906.518617    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:07 - Timestamp: 1738626907.518426    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:08 - Timestamp: 1738626908.518355    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:09 - Timestamp: 1738626909.518356    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:10 - Timestamp: 1738626910.518272    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:11 - Timestamp: 1738626911.518262    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:56:12 - Timestamp: 1738626912.518254    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:13 - Timestamp: 1738626913.518260    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:14 - Timestamp: 1738626914.518255    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:15 - Timestamp: 1738626915.518395    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:16 - Timestamp: 1738626916.518225    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:17 - Timestamp: 1738626917.518236    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:18 - Timestamp: 1738626918.518111    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:19 - Timestamp: 1738626919.518162    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:20 - Timestamp: 1738626920.518069    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:21 - Timestamp: 1738626921.518054    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:22 - Timestamp: 1738626922.518037    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:23 - Timestamp: 1738626923.518034    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:24 - Timestamp: 1738626924.518015    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:25 - Timestamp: 1738626925.517993    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:26 - Timestamp: 1738626926.517956    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:27 - Timestamp: 1738626927.518002    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:28 - Timestamp: 1738626928.517917    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:29 - Timestamp: 1738626929.517900    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:30 - Timestamp: 1738626930.517902    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:31 - Timestamp: 1738626931.517882    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:56:32 - Timestamp: 1738626932.517841    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:33 - Timestamp: 1738626933.517860    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:34 - Timestamp: 1738626934.517797    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:35 - Timestamp: 1738626935.517799    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:36 - Timestamp: 1738626936.517878    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:56:37 - Timestamp: 1738626937.517845    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:38 - Timestamp: 1738626938.517722    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:39 - Timestamp: 1738626939.517696    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:56:40 - Timestamp: 1738626940.517715    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:41 - Timestamp: 1738626941.517704    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:42 - Timestamp: 1738626942.517671    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:43 - Timestamp: 1738626943.517659    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:44 - Timestamp: 1738626944.517812    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:45 - Timestamp: 1738626945.517694    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:46 - Timestamp: 1738626946.517564    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:47 - Timestamp: 1738626947.517570    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:48 - Timestamp: 1738626948.517670    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:49 - Timestamp: 1738626949.517539    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:50 - Timestamp: 1738626950.517624    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:51 - Timestamp: 1738626951.517555    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:52 - Timestamp: 1738626952.517455    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:53 - Timestamp: 1738626953.517480    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:54 - Timestamp: 1738626954.517418    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:55 - Timestamp: 1738626955.517395    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:56 - Timestamp: 1738626956.517365    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:57 - Timestamp: 1738626957.517340    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:56:58 - Timestamp: 1738626958.517326    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:56:59 - Timestamp: 1738626959.517310    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:00 - Timestamp: 1738626960.517313    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:01 - Timestamp: 1738626961.517280    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:02 - Timestamp: 1738626962.517358    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:03 - Timestamp: 1738626963.517223    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:04 - Timestamp: 1738626964.517294    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:05 - Timestamp: 1738626965.517202    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:06 - Timestamp: 1738626966.517196    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:07 - Timestamp: 1738626967.517144    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:57:08 - Timestamp: 1738626968.517144    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:57:09 - Timestamp: 1738626969.517111    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:57:10 - Timestamp: 1738626970.517091    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:11 - Timestamp: 1738626971.517075    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:12 - Timestamp: 1738626972.517096    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:13 - Timestamp: 1738626973.517063    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:14 - Timestamp: 1738626974.517054    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:15 - Timestamp: 1738626975.517028    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:16 - Timestamp: 1738626976.517013    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:57:17 - Timestamp: 1738626977.516950    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:18 - Timestamp: 1738626978.516932    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:19 - Timestamp: 1738626979.516998    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:20 - Timestamp: 1738626980.516922    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:21 - Timestamp: 1738626981.516876    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:22 - Timestamp: 1738626982.516895    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:36 - Setting bitrate for can0...
+23:57:36 - Bringing can0 interface up...
+23:57:36 - can0 interface is up.
+23:57:39 - Timestamp: 1738627057.565533    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:40 - Timestamp: 1738627058.565642    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:41 - Timestamp: 1738627059.565414    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:42 - Timestamp: 1738627060.565344    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:43 - Timestamp: 1738627061.565331    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:44 - Timestamp: 1738627062.565300    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:45 - Timestamp: 1738627063.565345    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:46 - Timestamp: 1738627064.565266    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:47 - Timestamp: 1738627065.565289    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:48 - Timestamp: 1738627066.565218    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:49 - Timestamp: 1738627067.565197    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:50 - Timestamp: 1738627068.565208    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:51 - Timestamp: 1738627069.565191    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:52 - Timestamp: 1738627070.565171    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:53 - Timestamp: 1738627071.565166    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:57:54 - Timestamp: 1738627072.565165    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:55 - Timestamp: 1738627073.565133    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:56 - Timestamp: 1738627074.565059    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:57 - Timestamp: 1738627075.565059    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:57:58 - Timestamp: 1738627076.565024    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:57:59 - Timestamp: 1738627077.565002    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:58:00 - Timestamp: 1738627078.564984    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:01 - Timestamp: 1738627079.564963    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:02 - Timestamp: 1738627080.564943    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:03 - Timestamp: 1738627081.564925    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:04 - Timestamp: 1738627082.564907    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:05 - Timestamp: 1738627083.564881    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:06 - Timestamp: 1738627084.564857    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:07 - Timestamp: 1738627085.564927    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:08 - Timestamp: 1738627086.564824    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:58:09 - Timestamp: 1738627087.564815    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:58:10 - Timestamp: 1738627088.564789    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:11 - Timestamp: 1738627089.564772    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:12 - Timestamp: 1738627090.564783    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:13 - Timestamp: 1738627091.564732    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:14 - Timestamp: 1738627092.564714    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:15 - Timestamp: 1738627093.564696    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:16 - Timestamp: 1738627094.564711    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:17 - Timestamp: 1738627095.564702    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:18 - Timestamp: 1738627096.564681    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:19 - Timestamp: 1738627097.564655    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:58:20 - Timestamp: 1738627098.564639    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:58:21 - Timestamp: 1738627099.564580    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:22 - Timestamp: 1738627100.564559    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:23 - Timestamp: 1738627101.564538    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:24 - Timestamp: 1738627102.564519    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:58:25 - Timestamp: 1738627103.564502    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:26 - Timestamp: 1738627104.564482    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:27 - Timestamp: 1738627105.564463    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:28 - Timestamp: 1738627106.564437    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:29 - Timestamp: 1738627107.564418    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:30 - Timestamp: 1738627108.564403    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:31 - Timestamp: 1738627109.564384    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:32 - Timestamp: 1738627110.564364    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:33 - Timestamp: 1738627111.564344    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:34 - Timestamp: 1738627112.564326    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:35 - Timestamp: 1738627113.564304    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:36 - Timestamp: 1738627114.564289    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:37 - Timestamp: 1738627115.564266    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:38 - Timestamp: 1738627116.564285    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:39 - Timestamp: 1738627117.564224    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:40 - Timestamp: 1738627118.564207    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:41 - Timestamp: 1738627119.564232    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:42 - Timestamp: 1738627120.564168    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:43 - Timestamp: 1738627121.564147    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:44 - Timestamp: 1738627122.564133    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:45 - Timestamp: 1738627123.564113    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:46 - Timestamp: 1738627124.564093    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:47 - Timestamp: 1738627125.564072    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:48 - Timestamp: 1738627126.564107    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:58:49 - Timestamp: 1738627127.564052    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:50 - Timestamp: 1738627128.564014    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:51 - Timestamp: 1738627129.564013    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:52 - Timestamp: 1738627130.563976    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:53 - Timestamp: 1738627131.563947    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:54 - Timestamp: 1738627132.563933    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:55 - Timestamp: 1738627133.563942    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:56 - Timestamp: 1738627134.563899    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:57 - Timestamp: 1738627135.563909    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:58:58 - Timestamp: 1738627136.563900    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:58:59 - Timestamp: 1738627137.563834    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:00 - Timestamp: 1738627138.563815    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:59:01 - Timestamp: 1738627139.563799    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:02 - Timestamp: 1738627140.563778    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:03 - Timestamp: 1738627141.563767    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:04 - Timestamp: 1738627142.563754    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:59:05 - Timestamp: 1738627143.563717    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:06 - Timestamp: 1738627144.563701    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:07 - Timestamp: 1738627145.563679    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:08 - Timestamp: 1738627146.563659    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:09 - Timestamp: 1738627147.563709    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:10 - Timestamp: 1738627148.563719    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:11 - Timestamp: 1738627149.563733    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:12 - Timestamp: 1738627150.563582    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:13 - Timestamp: 1738627151.563598    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:14 - Timestamp: 1738627152.563618    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:15 - Timestamp: 1738627153.563520    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:16 - Timestamp: 1738627154.563506    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:17 - Timestamp: 1738627155.563546    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:18 - Timestamp: 1738627156.563471    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:19 - Timestamp: 1738627157.563451    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:20 - Timestamp: 1738627158.563514    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:21 - Timestamp: 1738627159.563464    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:22 - Timestamp: 1738627160.563550    ID: 00002900    X Rx                DL:  8    3e 05 ff ff 00 00 1d 00     Channel: can0
+23:59:23 - Timestamp: 1738627161.563660    ID: 00002900    X Rx                DL:  8    3e 05 00 01 00 00 1d 00     Channel: can0
+23:59:54 - Setting bitrate for can0...
+23:59:54 - Bringing can0 interface up...
+23:59:54 - can0 interface is up.
+23:59:55 - Timestamp: 1738627195.702776    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:56 - Timestamp: 1738627196.702708    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:57 - Timestamp: 1738627197.702744    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:58 - Timestamp: 1738627198.702675    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0
+23:59:59 - Timestamp: 1738627199.702664    ID: 00002900    X Rx                DL:  8    3e 05 00 00 00 00 1d 00     Channel: can0

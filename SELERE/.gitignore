@@ -1,0 +1,4 @@
+venv/
+__pycache__/
+kneeMotor/__pycache__/
+ankleMotor/__pycache__/
