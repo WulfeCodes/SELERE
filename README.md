@@ -1,87 +1,182 @@
-This project consists of the actuation of the CubeMars Ak10-9 KV60 V2.0 and Mav Robotics MD-80 motors for knee and ankle actuation respectively.
+# SELERE — Exoskeleton Motor Actuation
 
-Communication with the actuators are all done through CAN, the MD-80s specifically utilize the PyCandle library from : https://github.com/mabrobotics/candle. 
+This project handles actuation of the **CubeMars AK10-9 KV60 V2.0** (knee) and **MAB Robotics MD-80** (ankle) motors via CAN communication on a Raspberry Pi with an RS-485 CAN Hat.
 
-Within the SELERE file there exists base code for CAN communication and actuation, these can be found in the ankleMotor, and kneeMotor folders. 
+---
 
-CubeMars Ak10-9 KV60 V2.0: as stated before, this actuator is controlled through CAN, specifically we utilize the RS-485 CAN Hat. 
+## Table of Contents
+- [Warnings](#warnings)
+- [Project Structure](#project-structure)
+- [Hardware Configuration](#hardware-configuration)
+- [CAN Line Initialization](#can-line-initialization)
+- [Knee Motor — CubeMars AK10-9 KV60 V2.0](#knee-motor--cubemarks-ak10-9-kv60-v20)
+- [Ankle Motor — MAB Robotics MD-80](#ankle-motor--mab-robotics-md-80)
+- [Software Architecture](#software-architecture)
 
-the classes.py file features the ExoSkeleton class, within this class there are KneeMotor and AnkleMotor members for each joint, 4 in total. As of right now, these are only used for storage of hardware CAN IDs and safe motor selection. 
+---
 
-For Hardware configuration it is best practice for the CAN line to have two 120 Ohm parallel resistors between the H and L CAN lines, this helps mitigate loopback and helps facilitate difference measurement of the two for proper bit readage. 
+**See warning below before use.**
 
-The RS845 CAN Hat has embedded resistors that can be activated, though a parallel Ohm resistor should still be soldered near the actuator side for robust communication. 
+---
 
-The CubeMars Ak10-9 KV60 V2.0 Knee Motors' communication protocol and actuation functions derive from the /kneeMotor/motorCAN.py and /kneeMotor/motorControl.py respectively. 
+## ⚠️ Warnings
 
-For motor parameters of the knee motor, it falls under a bit rate of 500k with arbitration ID labels of different actuation types for the following: 
+### MIT Mode vs. Servo Mode — Do Not Mix in the Same Power Session
 
-CAN_PACKET_SET_DUTY = 0
-CAN_PACKET_SET_CURRENT = 1
-CAN_PACKET_SET_CURRENT_BRAKE = 2
-CAN_PACKET_SET_RPM = 3
-CAN_PACKET_SET_POS = 4
-CAN_PACKET_SET_ORIGIN_HERE = 5
-CAN_PACKET_SET_POS_SPD = 6
+The `probe_bitrate()` and `scan_bus()` functions in `vijayTesting.py` send messages in **MIT mode**. The actuation functions in `kneeMotor/motorControl.py` operate in **Servo Mode**.
 
-Specific actuation functions are given in /kneeMotor/motorControl.py 
+> **These two modes must never be used within the same power session on the CubeMars AK10-9 KV60 V2.0.** Doing so risks burning the motor driver board.
 
-through current(), speed(), position_speed_acceleration(), current_brake(), move_to_desired_angle(), 
-
-def move_to_desired_angle():
-
-These are all parameterized the same, the argument format typically follows (bus, data, controller_id=CONTROLLER_ID) and each return a tuple of the bus, eid buffer, and data buffer. 
-
-The buffers are expected to be 4 bytes long with the eid being the OR operation of the 8 bit shifted actuation ID type | controller ID you are trying to control: for ex: the construction of an eid buffer for position control: CAN_PACKET_SET_POS = 4 of a controller ID 1 is the 8 byte buffer of: [00000000,00000000,00000100,00000001]
-
-:
-
-eid = ((CAN_PACKET_SET_POS << 8) | controller_id) 
+If you use `probe_bitrate()` or `scan_bus()` to inspect CAN IDs, **fully power cycle the motor** before running any Servo Mode actuation.
 
 
-As stated in the documentation the the data buffer should be in big endian style with the absolute position scaled by 10,000:     
+## Project Structure
 
-buffer = struct.pack('>i', int(position * 10000))
+```
+SELERE/
+├── kneeMotor/
+│   ├── motorCAN.py       # CAN communication primitives
+│   └── motorControl.py   # Actuation functions
+├── ankleMotor/           # MD-80 base code
+├── classes.py            # ExoSkeleton class definition
+└── vijayTesting.py       # CAN bus probing utilities
+```
 
-Once the function is called, it is typical in our set up to unpack these and send them as arguments into the comm_can_transmit_eid(bus, eid, data) found in kneeMotor/motorCAN.py
+The `ExoSkeleton` class in `classes.py` contains `KneeMotor` and `AnkleMotor` members for each joint (4 total), currently used for storing hardware CAN IDs and safe motor selection.
 
-this sends a a message through :    
+---
 
-  message = can.Message(
-        arbitration_id=eid,  # Extended ID
-        is_extended_id=True, # Use extended ID
-        data=data            # Data payload
-    )
-    
-  try:
-  bus.send(message)
-  
-except can.CanError as e:
-  print(f"Error sending message: {e}")
+## Hardware Configuration
 
-WARNING: when operating the CubeMars AK-109 KV60 V2 motor MIT mode and Servo Mode can not be operated within the same power session.  
+All actuators communicate over CAN. Best practices for the CAN line:
 
-For example: the probe_bitrate() and scan_bus() functions within vijayTesting.py ping components on the CAN line and print the ID and message received, the data buffer of the outgoing message is in MIT mode, as such if one wishes to check CAN IDs of motors on the CAN line through one of these functions and then actuate them through the Servo Mode, these should not be done within the same power session as it endangers burning the driver board. 
+- Place two **120 Ω resistors in parallel** between the CAN H and L lines to mitigate loopback and enable differential bit measurement.
+- The RS-485 CAN Hat has embedded termination resistors that can be activated, but an additional resistor should still be **soldered near the actuator end** for robust communication.
 
-MD80: 
+---
 
-The MD80 Motor as stated before communicates through the 
+## CAN Line Initialization
 
-CAN line initialization: 
+For the RS-485 CAN Hat (used with knee motors), initialize the interface at the correct bitrate before creating the `bus` object:
 
-for the initialization of the RS845 CAN line the following commands should be called to create a bus on the correct bitrate for communication of the knee motors: 
+```python
+import os, time
+import can
 
 os.system(f'sudo ip link set {channel} down')
 os.system(f'sudo ip link set {channel} type can bitrate {bitrate}')
 os.system(f'sudo ip link set {channel} up')
-time.sleep(0.1)  # let interface settle
+time.sleep(0.1)  # Let interface settle
 
 bus = can.interface.Bus(interface='socketcan', channel=channel)
+```
 
-As for the MD80, the creation of a PyCandle object abstracts this away:
+For the MD-80, the PyCandle library abstracts this away:
+
+```python
+import pyCandle
 
 candle = pyCandle.Candle(pyCandle.CAN_BAUD_1M, True)
+```
 
+---
 
+## Knee Motor — CubeMars AK10-9 KV60 V2.0
 
+### Communication
+
+- **Protocol:** CAN via RS-485 CAN Hat
+- **Bit Rate:** 500k
+- **Relevant files:** `kneeMotor/motorCAN.py`, `kneeMotor/motorControl.py`
+
+### Packet Types
+
+| Constant | Value | Description |
+|---|---|---|
+| `CAN_PACKET_SET_DUTY` | `0` | Set duty cycle |
+| `CAN_PACKET_SET_CURRENT` | `1` | Set current |
+| `CAN_PACKET_SET_CURRENT_BRAKE` | `2` | Set braking current |
+| `CAN_PACKET_SET_RPM` | `3` | Set RPM |
+| `CAN_PACKET_SET_POS` | `4` | Set position |
+| `CAN_PACKET_SET_ORIGIN_HERE` | `5` | Set current position as origin |
+| `CAN_PACKET_SET_POS_SPD` | `6` | Set position with speed |
+
+### Actuation Functions (`kneeMotor/motorControl.py`)
+
+All functions share the same signature pattern:
+
+```python
+func(bus, data, controller_id=CONTROLLER_ID)
+# Returns: (bus, eid_buffer, data_buffer)
+```
+
+Available functions:
+- `current()`
+- `speed()`
+- `position_speed_acceleration()`
+- `current_brake()`
+- `move_to_desired_angle()`
+
+### Message Construction
+
+**Extended ID (EID):** Constructed by OR-ing the 8-bit-shifted packet type with the controller ID:
+
+```python
+eid = (CAN_PACKET_SET_POS << 8) | controller_id
+```
+
+Example — position control (`CAN_PACKET_SET_POS = 4`) for controller ID `1`:
+
+```
+EID bytes: [0x00, 0x00, 0x04, 0x01]
+```
+
+**Data buffer:** Big-endian, position scaled by 10,000:
+
+```python
+import struct
+
+buffer = struct.pack('>i', int(position * 10000))
+```
+
+### Transmitting a Message
+
+Unpack the return values from a control function and pass them to `comm_can_transmit_eid()` in `kneeMotor/motorCAN.py`:
+
+```python
+message = can.Message(
+    arbitration_id=eid,
+    is_extended_id=True,
+    data=data
+)
+
+try:
+    bus.send(message)
+except can.CanError as e:
+    print(f"Error sending message: {e}")
+```
+
+---
+
+## Ankle Motor — MAB Robotics MD-80
+
+- **Protocol:** CAN via PyCandle
+- **Library:** [mabrobotics/candle](https://github.com/mabrobotics/candle)
+- **Relevant folder:** `ankleMotor/`
+
+Initialization and communication are abstracted by the PyCandle library (see [CAN Line Initialization](#can-line-initialization) above).
+
+---
+
+## Software Architecture
+
+### `classes.py` — `ExoSkeleton`
+
+Holds `KneeMotor` and `AnkleMotor` instances for all four joints. Used for:
+- Storing hardware CAN IDs
+- Safe motor selection
+
+### `vijayTesting.py`
+
+Contains `probe_bitrate()` and `scan_bus()` utilities that ping CAN components and print their ID and received message. 
 <img width="3000" height="1750" alt="Image" src="https://github.com/user-attachments/assets/3d62464b-2783-4822-9883-b0fb6f001be5" />
