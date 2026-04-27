@@ -44,11 +44,9 @@ ANGLE_POLL_MS = 200     # how often (ms) to refresh live angle readout
 
 global KNEE_ANGLE
 global EXO
-global sendNegative
 
-KNEE_ANGLE   = None
-EXO          = None
-sendNegative = False
+KNEE_ANGLE = None
+EXO        = None
 
 
 # ── CAN setup ─────────────────────────────────────────────────────────────────
@@ -88,45 +86,72 @@ def pos_to_angle(x, y):
     return deg % 360
 
 
-# ── Circular Slider Widget ────────────────────────────────────────────────────
+# ── Circular Slider Widget (Ankle) ────────────────────────────────────────────
 
 class CircularSlider(tk.Canvas):
-    def __init__(self, parent, label, color, initial=45, callback=None, **kw):
+    # HALF_SWEEP is the fixed visual arc extent (degrees each side).
+    # VISUAL_SCALE is computed per-instance so a smaller phys_max yields
+    # a higher scale → the handle travels further per degree → "larger" feel.
+    HALF_SWEEP = 100     # visual degrees each side (wider arc than before)
+
+    def __init__(self, parent, label, color, initial=0, callback=None,
+                 phys_max=40, **kw):
         super().__init__(parent, width=SIZE, height=SIZE,
                          bg=PANEL_BG, highlightthickness=0, **kw)
-        self.label     = label
-        self.color     = color
-        self.angle     = initial
-        self.callback  = callback
-        self._dragging = False
+        self.label        = label
+        self.color        = color
+        self.angle        = float(initial)
+        self.callback     = callback
+        self._dragging    = False
+        self.phys_max     = phys_max
+        # Adaptive scale: smaller range → higher scale → larger slider feel
+        self.VISUAL_SCALE = self.HALF_SWEEP / phys_max
 
         self._draw()
         self.bind("<ButtonPress-1>",   self._on_press)
         self.bind("<B1-Motion>",       self._on_drag)
         self.bind("<ButtonRelease-1>", self._on_release)
 
+    def _to_visual(self):
+        return self.angle * self.VISUAL_SCALE
+
+    def _handle_pos(self):
+        return angle_to_pos(self._to_visual(), RADIUS)
+
     def _draw(self):
         self.delete("all")
         r   = RADIUS
         pad = CX - r
+        v   = self._to_visual()
+        HS  = self.HALF_SWEEP
+        PM  = self.phys_max
 
-        for t in range(0, 360, 10):
-            inner = r - (10 if t % 30 == 0 else 5)
-            x1, y1 = angle_to_pos(t, inner)
-            x2, y2 = angle_to_pos(t, r - 2)
+        # Tick marks – major every phys_max/4, minor every phys_max/8
+        tick_major = max(1, PM // 4)
+        tick_minor = max(1, PM // 8)
+        for phys in range(-PM, PM + 1, tick_minor):
+            vis   = phys * self.VISUAL_SCALE
+            major = (phys % tick_major == 0)
+            inner = r - (12 if major else 6)
+            x1, y1 = angle_to_pos(vis, inner)
+            x2, y2 = angle_to_pos(vis, r - 2)
             self.create_line(x1, y1, x2, y2,
-                             fill=TICK_COL, width=(2 if t % 30 == 0 else 1))
+                             fill=TICK_COL, width=(2 if major else 1))
 
+        # Track arc spanning ±HALF_SWEEP° visually (centered at top)
         self.create_arc(pad, pad, CX + r, CY + r,
-                        start=0, extent=359.9,
+                        start=90 + HS, extent=-(2 * HS),
                         style=tk.ARC, outline=TRACK_COL, width=THICKNESS)
 
-        self.create_arc(pad, pad, CX + r, CY + r,
-                        start=90, extent=-self.angle,
-                        style=tk.ARC, outline=self.color, width=THICKNESS)
+        # Filled arc from 0° to current visual angle
+        if abs(v) > 0.5:
+            self.create_arc(pad, pad, CX + r, CY + r,
+                            start=90, extent=-v,
+                            style=tk.ARC, outline=self.color, width=THICKNESS)
 
-        for deg, txt in [(0, "0°"), (90, "90°"), (180, "180°"), (270, "270°")]:
-            lx, ly = angle_to_pos(deg, r + 20)
+        # Labels at ±phys_max and 0
+        for phys, txt in [(-PM, f"-{PM}°"), (0, "0°"), (PM, f"+{PM}°")]:
+            lx, ly = angle_to_pos(phys * self.VISUAL_SCALE, r + 22)
             self.create_text(lx, ly, text=txt, fill=TEXT_COL, font=("Helvetica", 8))
 
         self.create_text(CX, CY - 12, text=self.label,
@@ -134,19 +159,157 @@ class CircularSlider(tk.Canvas):
         self.create_text(CX, CY + 14, text=f"{self.angle:.1f}°",
                          fill=VAL_COL, font=("Helvetica", 22, "bold"))
 
-        hx, hy = angle_to_pos(self.angle, r)
+        # Draggable Handle
+        hx, hy = self._handle_pos()
         kr = 11
         self.create_oval(hx - kr, hy - kr, hx + kr, hy + kr,
                          fill=self.color, outline=VAL_COL, width=2, tags="handle")
 
     def _on_press(self, e):
-        hx, hy = angle_to_pos(self.angle, RADIUS)
+        hx, hy = self._handle_pos()
         if math.hypot(e.x - hx, e.y - hy) < 22:
             self._dragging = True
 
     def _on_drag(self, e):
         if self._dragging:
-            self.angle = round(pos_to_angle(e.x, e.y), 1)
+            raw = pos_to_angle(e.x, e.y)
+            # Convert 0-360 to signed, then clamp to ±HALF_SWEEP visual
+            visual = raw if raw <= 180 else raw - 360
+            visual = max(-float(self.HALF_SWEEP), min(float(self.HALF_SWEEP), visual))
+            # Map back to physical, clamped to phys_max
+            self.angle = round(
+                max(-float(self.phys_max), min(float(self.phys_max),
+                    visual / self.VISUAL_SCALE)), 1)
+            self._draw()
+            if self.callback:
+                self.callback(self.label, self.angle)
+
+    def _on_release(self, _):
+        self._dragging = False
+
+    def get_angle(self):
+        return self.angle
+
+
+# ── Knee Arc Widget ───────────────────────────────────────────────────────────
+
+class KneeArcWidget(tk.Canvas):
+    """
+    Arc slider for knee angle. Physical range (phys_max) is mapped onto a fixed
+    ±HALF_SWEEP visual arc so the handle has room to move.
+    Smaller phys_max → higher VISUAL_SCALE → larger feel per degree.
+    Cyan = Extension, Red = Flexion.
+    """
+    HALF_SWEEP = 100     # visual degrees each side (wider arc than before)
+
+    def __init__(self, parent, label, color, initial=0, callback=None,
+                 phys_max=40, **kw):
+        super().__init__(parent, width=SIZE, height=SIZE,
+                         bg=PANEL_BG, highlightthickness=0, **kw)
+        self.label        = label
+        self.color        = color
+        self.angle        = float(initial)
+        self.callback     = callback
+        self._dragging    = False
+        self.phys_max     = phys_max
+        # Adaptive scale: smaller range → higher scale → larger slider feel
+        self.VISUAL_SCALE = self.HALF_SWEEP / phys_max
+        self._draw()
+        self.bind("<ButtonPress-1>",   self._on_press)
+        self.bind("<B1-Motion>",       self._on_drag)
+        self.bind("<ButtonRelease-1>", self._on_release)
+
+    def _to_visual(self):
+        return self.angle * self.VISUAL_SCALE
+
+    def _handle_pos(self):
+        return angle_to_pos(self._to_visual(), RADIUS)
+
+    def _draw(self):
+        self.delete("all")
+        r   = RADIUS
+        pad = CX - r
+        v   = self._to_visual()
+        HS  = self.HALF_SWEEP
+
+    def _draw(self):
+        self.delete("all")
+        r   = RADIUS
+        pad = CX - r
+        v   = self._to_visual()
+        HS  = self.HALF_SWEEP
+        PM  = self.phys_max
+
+        # ── Tick marks – major every phys_max/4, minor every phys_max/8 ──
+        tick_major = max(1, PM // 4)
+        tick_minor = max(1, PM // 8)
+        for phys in range(-PM, PM + 1, tick_minor):
+            vis   = phys * self.VISUAL_SCALE
+            major = (phys % tick_major == 0)
+            inner = r - (12 if major else 6)
+            x1, y1 = angle_to_pos(vis, inner)
+            x2, y2 = angle_to_pos(vis, r - 2)
+            self.create_line(x1, y1, x2, y2,
+                             fill=TICK_COL, width=(2 if major else 1))
+
+        # Physical angle labels at ±phys_max/2 and ±phys_max
+        half = PM // 2
+        for phys, txt in [(-PM, f"−{PM}°"), (-half, f"−{half}°"),
+                          (half, f"+{half}°"), (PM, f"+{PM}°")]:
+            lx, ly = angle_to_pos(phys * self.VISUAL_SCALE, r + 18)
+            self.create_text(lx, ly, text=txt, fill=TEXT_COL, font=("Helvetica", 7))
+
+        # ── Track arc (gray, ±HALF_SWEEP sweep centered at top) ──
+        self.create_arc(pad, pad, CX + r, CY + r,
+                        start=90 + HS, extent=-(2 * HS),
+                        style=tk.ARC, outline=TRACK_COL, width=THICKNESS)
+
+        # ── Filled arc: cyan for extension, red for flexion ──
+        if abs(v) > 0.5:
+            fill_col = self.color if v > 0 else ACCENT1
+            self.create_arc(pad, pad, CX + r, CY + r,
+                            start=90, extent=-v,
+                            style=tk.ARC, outline=fill_col, width=THICKNESS)
+
+        # ── "← Flex" and "Ext →" labels flanking the angle value ──
+        self.create_text(CX - 54, CY + 44,
+                         text="← Flex", anchor=tk.E,
+                         fill=ACCENT1, font=("Helvetica", 8, "bold"))
+        self.create_text(CX + 54, CY + 44,
+                         text="Ext →", anchor=tk.W,
+                         fill=self.color, font=("Helvetica", 8, "bold"))
+
+        # ── Center: joint name, angle value, direction word ──
+        self.create_text(CX, CY - 16, text=self.label,
+                         fill=TEXT_COL, font=("Helvetica", 11, "bold"))
+        sign = "+" if self.angle > 0 else ""
+        self.create_text(CX, CY + 8, text=f"{sign}{self.angle:.1f}°",
+                         fill=VAL_COL, font=("Helvetica", 22, "bold"))
+        direction = "Extension" if self.angle > 0.4 else ("Flexion" if self.angle < -0.4 else "Neutral")
+        dir_col   = self.color if self.angle > 0.4 else (ACCENT1 if self.angle < -0.4 else "#7070a0")
+        self.create_text(CX, CY + 28, text=direction,
+                         fill=dir_col, font=("Helvetica", 8))
+
+        # ── Handle (color matches arc) ──
+        hx, hy = self._handle_pos()
+        kr = 11
+        self.create_oval(hx - kr, hy - kr, hx + kr, hy + kr,
+                         fill=self.color if self.angle >= 0 else ACCENT1,
+                         outline=VAL_COL, width=2, tags="handle")
+
+    def _on_press(self, e):
+        hx, hy = self._handle_pos()
+        if math.hypot(e.x - hx, e.y - hy) < 22:
+            self._dragging = True
+
+    def _on_drag(self, e):
+        if self._dragging:
+            raw    = pos_to_angle(e.x, e.y)
+            visual = raw if raw <= 180 else raw - 360
+            visual = max(-float(self.HALF_SWEEP), min(float(self.HALF_SWEEP), visual))
+            self.angle = round(
+                max(-float(self.phys_max), min(float(self.phys_max),
+                    visual / self.VISUAL_SCALE)), 1)
             self._draw()
             if self.callback:
                 self.callback(self.label, self.angle)
@@ -364,8 +527,14 @@ class JointAngleApp(tk.Tk):
             tk.Label(col, text=label.upper(), bg=PANEL_BG, fg=color,
                      font=("Helvetica", 12, "bold"), pady=4).pack()
 
-            slider = CircularSlider(col, label, color, initial=init,
-                                    callback=self._on_servo_change)
+            if label == "Knee":
+                slider = KneeArcWidget(col, label, color, initial=init,
+                                       callback=self._on_servo_change,
+                                       phys_max=40)
+            else:
+                slider = CircularSlider(col, label, color, initial=init,
+                                        callback=self._on_servo_change,
+                                        phys_max=40)
             slider.pack()
 
             var = tk.StringVar(value=f"{init:.1f}°")
@@ -391,7 +560,7 @@ class JointAngleApp(tk.Tk):
                 def _submit(event=None):
                     raw = jentry.get().strip().rstrip("°")
                     try:
-                        angle = float(raw) % 360
+                        angle = max(-40.0, min(40.0, float(raw)))
                     except ValueError:
                         jentry.delete(0, tk.END)
                         return
@@ -473,13 +642,11 @@ class JointAngleApp(tk.Tk):
     # ── Servo callbacks ───────────────────────────────────────────────────────
 
     def _on_servo_change(self, joint: str, angle: float):
-        global KNEE_ANGLE, sendNegative
+        global KNEE_ANGLE
 
         if joint == "Ankle":
             self.ankle_var.set(f"{angle:.1f}°")
         else:
-            if KNEE_ANGLE is not None and angle < KNEE_ANGLE:
-                sendNegative = True
 
             KNEE_ANGLE = angle
             self.knee_var.set(f"{angle:.1f}°")
@@ -487,10 +654,9 @@ class JointAngleApp(tk.Tk):
 
             comm_can_transmit_eid(*move_to_desired_angle(
                 bus=can0,
-                position=KNEE_ANGLE if not sendNegative else KNEE_ANGLE - 360,
+                position=-KNEE_ANGLE,
                 controller_id=EXO.rightKnee.id
             ))
-            sendNegative = False
 
         a = self.ankle_slider.get_angle()
         k = self.knee_slider.get_angle()
@@ -556,12 +722,12 @@ class JointAngleApp(tk.Tk):
             self.knee_brake.refresh_angle()
 
             # 2. Continuously send the knee brake packet based on the current slider value
-            knee_intensity = self.knee_brake.intensity_var.get()
-            comm_can_transmit_eid(*current_brake(
-                bus=can0,
-                current=knee_intensity,
-                controller_id=EXO.rightKnee.id
-            ))
+            # knee_intensity = self.knee_brake.intensity_var.get()
+            # comm_can_transmit_eid(*current_brake(
+            #     bus=can0,
+            #     current=knee_intensity,
+            #     controller_id=EXO.rightKnee.id
+            # ))
             
         # Re-queue the loop
         self.after(ANGLE_POLL_MS, self._poll_angles)
