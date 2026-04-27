@@ -176,7 +176,8 @@ Holds `KneeMotor` and `AnkleMotor` instances for all four joints. Used for:
 - Storing hardware CAN IDs
 - Safe motor selection
 
-### `vijayTesting.py`
+### `gui.py`
 
 Contains `probe_bitrate()` and `scan_bus()` utilities that ping CAN components and print their ID and received message. 
+This code is the main file used in the real-time actuation of the SELERE system.
 <img width="3000" height="1750" alt="Image" src="https://github.com/user-attachments/assets/3d62464b-2783-4822-9883-b0fb6f001be5" />
